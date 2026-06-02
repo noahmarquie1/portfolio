@@ -1,0 +1,10 @@
+.experience-container {
+    background-color: black;
+    margin: 80px;
+    padding: 40px;
+    aspect-ratio: 2/1;
+}
+
+.experience-title {
+    color: white;
+}

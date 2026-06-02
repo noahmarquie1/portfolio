@@ -1,0 +1,551 @@
+.about-container {
+    margin: 40px;
+}
+
+.nav-links {
+    padding-left: 0px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+}
+
+.about-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    width: 46vw;
+}
+
+.about-right-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-rect-1 {
+    height: 30vw;
+}
+
+.about-rect-2 {
+    height: 14vw;
+}
+
+.about-rect-3 {
+    height: 46vw;
+}
+
+/* Profile Photo Section */
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-wrapper {
+    position: relative;
+    height: 100%;
+}
+
+.profile-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    padding: 2vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    text-align: center;
+
+    width: 70%;
+    margin: auto;
+}
+
+.profile-text h2 {
+    font-size: 2.5vw;
+    font-weight: bold;
+    margin-bottom: 0.5vw;
+}
+
+.profile-text p {
+    font-size: 1.5vw;
+    font-weight: lighter;
+    text-align: left;
+}
+
+/* Experience Timeline Section */
+
+.timeline-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: calc(14vw - 10px);
+}
+
+.timeline-box {
+    width: 10vw;
+    height: 10vw;
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.timeline-bottom {
+    width: 100%;
+    height: 5px;
+    background-color: black;
+}
+
+.timeline-box h2 {
+    font-size: 1vw;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2vw;
+    margin-bottom: 0;
+}
+
+.timeline-box img {
+    width: 5vw;
+    object-fit: contain;
+    margin: auto;
+}
+
+.timeline-box:hover {
+    transform: translateY(-1vw);
+}
+
+.timeline-box.selected {
+    transform: translateY(-1vw);
+}
+
+/* About Section */
+
+.about-rect-3 {
+    border: 5px solid black;
+}
+
+.about-rect-3 h2 {
+    text-align: center;
+    font-size: 3vw;
+    margin-top: 3vw;
+    margin-bottom: 2vw;
+}
+
+.education-box {
+    display: flex;
+    gap: 1vw;
+    align-items: start;
+    margin: 0px 10px;
+}
+
+.education-logo {
+    flex-shrink: 0;
+    width: 7vw;
+    height: 7vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.education-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.education-title {
+    font-size: 2vw;
+    margin: 0px;
+}
+
+.education-major {
+    font-size: 1.5vw;
+    margin-top: 5px;
+}
+
+.education-highlights {
+    margin: 0px 10px;
+    font-size: 1.5vw;
+}
+
+.education-highlights p {
+    font-weight: bold;
+}
+
+.spotlight {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 5vw;
+}
+
+.spotlight > div {
+    height: 10vw;
+    width: 10vw;
+    border: 5px solid black;
+}
+
+/* Git Contribution Chart */
+.git-contrib {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4vw;
+    overflow: hidden;
+}
+
+.git-contrib-title {
+    font-size: 1vw;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1vw;
+    margin-bottom: 0px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.git-contrib-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1vw);
+    grid-template-rows: repeat(4, 1vw);
+    grid-auto-flow: column;
+    gap: 0.15vw;
+    margin: auto;
+}
+
+.contrib-cell {
+    border-radius: 0.1vw;
+}
+
+.contrib-cell.level-0 {
+    background-color: #ebedf0;
+}
+.contrib-cell.level-1 {
+    background-color: #9be9a8;
+}
+.contrib-cell.level-2 {
+    background-color: #40c463;
+}
+.contrib-cell.level-3 {
+    background-color: #30a14e;
+}
+.contrib-cell.level-4 {
+    background-color: #216e39;
+}
+
+.git-contrib-loading .contrib-cell {
+    animation: contrib-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes contrib-pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.35;
+    }
+}
+
+.git-contrib-status {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7vw;
+    color: #999;
+}
+
+/* Music Carousel */
+.music {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4vw;
+    overflow: hidden;
+}
+
+.music-title {
+    font-size: 1vw;
+    font-weight: bold;
+    text-align: center;
+    margin: 1vw 0 0 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.music-stage {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    --music-tx: 2.5vw;
+}
+
+.music-album {
+    position: absolute;
+    width: 3.6vw;
+    height: 3.6vw;
+    top: 50%;
+    left: 50%;
+    border-radius: 0.15vw;
+    overflow: hidden;
+    box-shadow: 0 0.2vw 0.5vw rgba(0, 0, 0, 0.35);
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+}
+
+.music-artist {
+    font-size: 0.65vw;
+    text-align: center;
+    margin: 0 0 0.2vw 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.music-album-name {
+    font-size: 0.65vw;
+    font-weight: bold;
+    text-align: center;
+    margin: 0.2vw 0 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.music-prev,
+.music-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: none;
+    border: none;
+    font-size: 1.2vw;
+    line-height: 1;
+    padding: 0 0.15vw;
+    cursor: pointer;
+    color: black;
+}
+
+.music-prev {
+    left: 0;
+}
+.music-next {
+    right: 0;
+}
+
+.music-album img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.music-album-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #d0d0d0 0%, #909090 100%);
+}
+
+/* Photo of the Month */
+.photo {
+    padding: 0.4vw;
+    overflow: hidden;
+}
+
+.photo-title {
+    font-size: 1vw;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1vw;
+}
+
+.photo-frame {
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 0.1vw;
+}
+
+.photo-frame img {
+    object-fit: cover;
+    display: block;
+}
+
+.photo-placeholder {
+    width: 8vw;
+    height: 6vw;
+    margin: auto;
+}
+
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Mobile and Smaller Screens */
+
+@media (max-width: 726px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-container {
+        margin: 0px 16px;
+    }
+
+    .nav-links {
+        font-size: 2.5vw;
+    }
+
+    .about-left-column,
+    .about-right-column {
+        gap: 2vw;
+        display: contents;
+    }
+
+    .about-rect-1 {
+        order: 1;
+    }
+
+    .about-rect-2 {
+        order: 3;
+    }
+
+    .about-rect-3 h2 {
+        font-size: 4vw;
+    }
+
+    .about-rect-3 h3 {
+        font-size: 3vw;
+    }
+
+    .about-rect-3 p,
+    .about-rect-3 li {
+        font-size: 2vw;
+    }
+
+    .about-rect-3 {
+        order: 2;
+        height: auto;
+    }
+
+    .timeline-buttons {
+        height: 20vw;
+    }
+
+    .timeline-box {
+        width: 16vw;
+        height: 16vw;
+    }
+
+    .timeline-box h2 {
+        font-size: 1.5vw;
+        margin-top: 2vw;
+    }
+
+    .timeline-box img {
+        width: 8vw;
+    }
+
+    .profile-text h2 {
+        font-size: 4vw;
+    }
+
+    .profile-text p {
+        font-size: 3vw;
+    }
+
+    /* Spotlight box sizing */
+    .spotlight {
+        margin-top: 5vw;
+        margin-bottom: 2vw;
+    }
+
+    .spotlight > div {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    /* Git Contribution — mobile */
+    .git-contrib {
+        padding: 1vw;
+    }
+
+    .git-contrib-title {
+        font-size: 2.4vw;
+    }
+
+    .git-contrib-grid {
+        grid-template-columns: repeat(8, 2vw);
+        grid-template-rows: repeat(4, 2vw);
+        gap: 0.35vw;
+    }
+
+    .git-contrib-status {
+        font-size: 2vw;
+    }
+
+    /* Music Carousel — mobile */
+    .music {
+        padding: 1vw;
+    }
+
+    .music-title {
+        font-size: 2.4vw;
+    }
+
+    .music-artist,
+    .music-album-name {
+        font-size: 1.5vw;
+        margin: 0.4vw 0;
+    }
+
+    .music-stage {
+        --music-tx: 4vw;
+    }
+
+    .music-album {
+        width: 7.5vw;
+        height: 7.5vw;
+    }
+
+    .music-prev,
+    .music-next {
+        font-size: 3vw;
+        padding: 0 0.4vw;
+    }
+
+    /* Photo of the Month — mobile */
+    .photo {
+        padding: 1vw;
+    }
+
+    .photo-title {
+        font-size: 2.4vw;
+    }
+
+    .photo-placeholder {
+        height: 10vw;
+        width: 14vw;
+        margin: auto;
+    }
+}
