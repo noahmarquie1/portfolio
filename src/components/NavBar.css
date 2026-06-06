@@ -1,17 +1,20 @@
+/* ── Desktop ────────────────────────────────────────────────────────────── */
+
 .navbar-pill {
     background-color: black;
-    padding: 12px 40px;
-
-    margin: 40px;
+    padding: 30px;
+    margin: 40px 40px 0 40px;
+    position: relative;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-
     justify-content: center;
     align-items: center;
     gap: 8vw;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
@@ -19,8 +22,163 @@
     text-decoration: none;
 }
 
+.navbar-header {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.navbar-hamburger {
+    display: none;
+}
+
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.navbar-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+ * Each icon is a masked element.
+ * background-color  → the rendered colour of the icon
+ * mask-image        → the shape (supply your own SVG/PNG below)
+ *
+ * Black on white (collapsed) → white on black (expanded), smoothly.
+ */
+.navbar-icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    transition: background-color 0.35s ease;
+}
+
+.navbar-pill.open .navbar-icon {
+    background-color: white;
+}
+
+/* ↓ Replace these URLs with paths to your icon files ↓ */
+.navbar-icon-1 {
+    mask-image: url('../assets/social_icons/github.webp');
+    -webkit-mask-image: url('../assets/social_icons/github.webp');
+}
+
+.navbar-icon-2 {
+    mask-image: url('../assets/social_icons/linkedin.png');
+    -webkit-mask-image: url('../assets/social_icons/linkedin.png');
+}
+
+.navbar-icon-3 {
+    mask-image: url('../assets/social_icons/gmail.png');
+    -webkit-mask-image: url('../assets/social_icons/gmail.png');
+}
+
+
+/* ── Mobile ─────────────────────────────────────────────────────────────── */
+
 @media (max-width: 726px) {
+
+    .navbar-container {
+        margin: 0 25px;
+    }
+
+    /* Full-width pill, white when collapsed */
     .navbar-pill {
-        margin: 20px 16px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px 14px;
+        box-sizing: border-box;
+        transition: background-color 0.35s ease;
+        border: 3px solid black;
+
+    }
+
+    .navbar-pill.open {
+        background-color: black;
+    }
+
+    /* Header row: hamburger on left, icons on right */
+    .navbar-header {
+        position: static;
+        transform: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Hamburger */
+    .navbar-hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        margin: 0;
+    }
+
+    .navbar-hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: black;
+        transition: background-color 0.35s ease;
+    }
+
+    .navbar-pill.open .navbar-hamburger span {
+        background-color: white;
+    }
+
+    /* Icon row */
+    .navbar-icon {
+        background-color: black;
+    }
+
+
+    /* Nav links: animated slide-down */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4vw;
+        overflow: hidden;
+        max-height: 0;
+        padding: 0;
+        transition:
+            max-height 0.35s ease,
+            padding 0.35s ease;
+    }
+
+    .navbar-pill.open .nav-links {
+        max-height: 20em;
+        padding: 12px 0 4px;
+    }
+
+    .nav-links a {
+        font-size: 4vw;
+        margin: 1em;
     }
 }

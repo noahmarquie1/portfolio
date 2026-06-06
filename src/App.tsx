@@ -15,6 +15,11 @@ function App() {
       <NavBar />
       <About activeIdx={activeIdx} setActiveIdx={setActiveIdx} />
       <Experience activeIdx={activeIdx} />
+      <div>
+        <h2>Skills and Interests</h2>
+
+      </div>
+
       <Contact />
       <Footer />
     </div>
