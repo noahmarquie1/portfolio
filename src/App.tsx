@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { About } from "./components/About";
 import { Footer } from "./components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 import "./App.css";
 import NavBar from "./components/NavBar";
@@ -19,6 +20,7 @@ function App() {
       <Skills />
       <Contact />
       <Footer />
+      <Analytics />
     </div>
   );
 }

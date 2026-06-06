@@ -1,9 +1,5 @@
 import React from "react";
 import "./Experience.css";
-import accessiwayLogo from "../assets/accessiway.png";
-import transmutexLogo from "../assets/transmutex.png";
-import uroLogo from "../assets/ubc_uro.png";
-import mathLogo from "../assets/math.png";
 
 import transmutexExperience from "../assets/experience/fission_rates.gif";
 import accessiwayExperience from "../assets/experience/accessiwayDetail.avif";
