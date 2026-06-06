@@ -1,4 +1,95 @@
 .footer-container {
     background-color: black;
-    padding: 40px;
+}
+
+/* ── Desktop ────────────────────────────────────────────────────────────── */
+
+.footer-navbar-pill {
+    background-color: black;
+    padding: 30px;
+    margin: 0 40px;
+    position: relative;
+}
+
+.footer-nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8vw;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-navbar-header {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.footer-navbar-hamburger {
+    display: none;
+}
+
+.footer-navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-navbar-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-navbar-icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    transition: background-color 0.35s ease;
+}
+
+.footer-navbar-pill.open .footer-navbar-icon {
+    background-color: white;
+}
+
+.footer-navbar-icon-1 {
+    mask-image: url('../assets/social_icons/github.webp');
+    -webkit-mask-image: url('../assets/social_icons/github.webp');
+}
+
+.footer-navbar-icon-2 {
+    mask-image: url('../assets/social_icons/linkedin.png');
+    -webkit-mask-image: url('../assets/social_icons/linkedin.png');
+}
+
+.footer-navbar-icon-3 {
+    mask-image: url('../assets/social_icons/gmail.png');
+    -webkit-mask-image: url('../assets/social_icons/gmail.png');
+}
+
+/* ── Mobile ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 726px) {
+
+    .footer-navbar-icon-link {
+        display: none;
+    }
+
 }

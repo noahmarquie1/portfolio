@@ -5,6 +5,7 @@ import { Footer } from "./components/Footer";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Experience from "./components/Experience";
+import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 
 function App() {
@@ -15,11 +16,7 @@ function App() {
       <NavBar />
       <About activeIdx={activeIdx} setActiveIdx={setActiveIdx} />
       <Experience activeIdx={activeIdx} />
-      <div>
-        <h2>Skills and Interests</h2>
-
-      </div>
-
+      <Skills />
       <Contact />
       <Footer />
     </div>

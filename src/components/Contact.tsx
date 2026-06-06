@@ -1,12 +1,12 @@
 import React from "react";
 import "./Contact.css";
 
-export const Experience: React.FC = () => {
+export const Contact: React.FC = () => {
   return (
     <div className="contact-container" id="connect">
-      Hi
+      <div className="contact-title">Let's Connect!</div>
     </div>
   );
 };
 
-export default Experience;
+export default Contact;

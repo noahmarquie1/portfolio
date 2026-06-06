@@ -1,6 +1,8 @@
-.contact-container {
-    background-color: black;
-    margin: 80px;
-    padding: 40px;
-    aspect-ratio: 2/1;
+.contact-title {
+  font-size: 3vw;
+  text-align: center;
+  border: 3px solid black;
+  width: 30%;
+  margin: 10vw auto;
+  padding: 2vw;
 }

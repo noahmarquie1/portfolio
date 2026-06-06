@@ -1,0 +1,121 @@
+.skills-title {
+  font-size: 3vw;
+  text-align: center;
+  border: 3px solid black;
+  width: 30%;
+  margin: 0 auto;
+  padding: 2vw;
+}
+
+.skills-cubes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2vw;
+  margin: 4vw auto;
+  width: fit-content;
+  padding: 0 2vw;
+}
+
+.cube {
+  width: 10vw;
+  height: 10vw;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: height 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 1vw;
+  color: white;
+}
+
+.cube:hover {
+  height: 14vw;
+}
+
+.cube-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  width: 100%;
+}
+
+.cube-top {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cube-title {
+  font-size: 1.2vw;
+  font-weight: bold;
+  margin-bottom: 0.5vw;
+}
+
+.cube-icon {
+  font-size: 2vw;
+  margin-bottom: 0.5vw;
+}
+
+.cube-subtitle {
+  font-size: 0.9vw;
+  margin-bottom: 1vw;
+  opacity: 0.9;
+}
+
+.cube-description {
+  font-size: 0.8vw;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  line-height: 1.3;
+  margin-top: 0.5vw;
+}
+
+.cube:hover .cube-description {
+  opacity: 1;
+  max-height: 4vw;
+}
+
+@media (max-width: 768px) {
+  .skills-cubes {
+    grid-template-columns: 1fr;
+  }
+
+  .cube {
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .cube:hover {
+    height: 75vw;
+  }
+
+  .cube-top {
+    flex-shrink: 0;
+  }
+
+  .cube-title {
+    font-size: 5vw;
+  }
+
+  .cube-icon {
+    font-size: 12vw;
+  }
+
+  .cube-subtitle {
+    font-size: 4vw;
+  }
+
+  .cube-description {
+    font-size: 3.5vw;
+    max-height: 20vw;
+  }
+}
