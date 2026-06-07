@@ -229,7 +229,7 @@ export const About: React.FC<{
                 <div
                   key={idx}
                   className={`timeline-box ${activeIdx === idx ? "selected" : ""}`}
-                  onClick={() => setActiveIdx(activeIdx === idx ? null : idx)}
+                  onClick={() => setActiveIdx(idx)}
                 >
                   <h2>{exp.title}</h2>
                   <img src={exp.logo} alt={exp.alt} />
@@ -256,7 +256,7 @@ export const About: React.FC<{
               </div>
             </div>
             <div className="education-highlights">
-              <p>Recent Coursework:</p>
+              <p>Relevant Coursework:</p>
               <ul>
                 <li>MATH 215: Elementary Differential Equations</li>
                 <li>CPSC 221: Basic Algorithms and Data Structures</li>

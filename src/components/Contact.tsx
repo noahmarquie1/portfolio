@@ -56,7 +56,7 @@ export const Contact: React.FC = () => {
 
   return (
     <div className="contact-container" id="connect">
-      <div className="contact-title">Interested? Please reach out!</div>
+      <div className="contact-title">Let's Connect!</div>
       <div className="contact-form-wrapper">
         <form className="contact-form" onSubmit={handleSubmit}>
           <input

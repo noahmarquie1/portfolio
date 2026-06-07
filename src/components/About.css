@@ -426,14 +426,14 @@
 
     .about-rect-1 {
         order: 1;
-    }
-
-    .about-rect-1 {
         height: 60vh;
+        border: 3px solid black;
+        margin-bottom: 3vw;
     }
 
     .about-rect-2 {
         order: 3;
+        margin-bottom: 5vw;
     }
 
     .about-rect-3 h2 {
@@ -461,7 +461,7 @@
     }
 
     .timeline-buttons {
-        height: 20vw;
+        height: 24vw;
     }
 
     .timeline-box {

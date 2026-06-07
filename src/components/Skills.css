@@ -10,15 +10,19 @@
 .skills-cubes {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 14vw;
+  align-items: start;
   gap: 2vw;
   margin: 4vw auto;
   width: fit-content;
   padding: 0 2vw;
+  height: 24vw;
 }
 
 .cube {
-  width: 10vw;
-  height: 10vw;
+  width: 15vw;
+  height: 15vw;
+  min-height: 15vw;
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -29,11 +33,9 @@
   overflow: hidden;
   padding: 1vw;
   color: white;
+  will-change: height;
 }
 
-.cube:hover {
-  height: 14vw;
-}
 
 .cube-content {
   display: flex;
@@ -42,6 +44,7 @@
   justify-content: flex-start;
   text-align: center;
   width: 100%;
+  margin-top: 4vw;
 }
 
 .cube-top {
@@ -53,69 +56,77 @@
 }
 
 .cube-title {
-  font-size: 1.2vw;
+  font-size: 1.8vw;
   font-weight: bold;
   margin-bottom: 0.5vw;
 }
 
 .cube-icon {
-  font-size: 2vw;
+  width: 5vw;
+  height: 5vw;
   margin-bottom: 0.5vw;
-}
-
-.cube-subtitle {
-  font-size: 0.9vw;
-  margin-bottom: 1vw;
-  opacity: 0.9;
+  object-fit: contain;
 }
 
 .cube-description {
-  font-size: 0.8vw;
+  font-size: 1.0vw;
   opacity: 0;
-  max-height: 0;
-  overflow: hidden;
+  text-align: left;
   transition: opacity 0.3s ease, max-height 0.3s ease;
   line-height: 1.3;
-  margin-top: 0.5vw;
+  margin-top: 1.5vw;
 }
 
 .cube:hover .cube-description {
   opacity: 1;
-  max-height: 4vw;
+  max-height: 10vw;
+}
+
+.cube:hover {
+  height: 26vw;
 }
 
 @media (max-width: 768px) {
   .skills-cubes {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: 4vw;
+    margin: 30px auto;
   }
 
   .cube {
-    width: 60vw;
-    height: 60vw;
+    width: 30vw;
+    height: 30vw;
   }
 
   .cube:hover {
-    height: 75vw;
+    height: 50vw;
   }
 
   .cube-top {
     flex-shrink: 0;
   }
 
+  .cube-content {
+    margin-top: 6vw;
+  }
+
   .cube-title {
-    font-size: 5vw;
+    font-size: 3vw;
   }
 
   .cube-icon {
-    font-size: 12vw;
+    width: 8vw;
+    height: 8vw;
+    object-fit: contain;
   }
 
   .cube-subtitle {
-    font-size: 4vw;
+    display: none;
   }
 
   .cube-description {
-    font-size: 3.5vw;
-    max-height: 20vw;
+    font-size: 2vw;
+    max-height: 12vw;
   }
 }

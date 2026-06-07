@@ -2,18 +2,18 @@
   font-size: 3vw;
   text-align: center;
   border: 3px solid black;
-  width: 45%;
-  margin: 10vw auto;
+  width: 30%;
+  margin: 8vw auto;
   padding: 2vw;
   margin-bottom: 0px;
 }
 
 .contact-form-wrapper {
   background-color: black;
-  margin: 80px;
   padding: 3vw;
   box-shadow: 5px 5px gray;
-  margin-top: 20px;
+  margin: 60px auto;
+  width: 55%;
 }
 
 .contact-form {
@@ -90,8 +90,9 @@
 
 @media (max-width: 768px) {
   .contact-form-wrapper {
-    margin: 60px 40px;
     padding: 4vw;
+    width: 70%;
+    margin: 30px auto;
   }
 
   .contact-form {
@@ -101,7 +102,7 @@
   .contact-input,
   .contact-textarea {
     padding: 4vw;
-    font-size: 4vw;
+    font-size: 3vw;
   }
 
   .contact-textarea {
@@ -110,10 +111,10 @@
 
   .contact-submit {
     padding: 4vw;
-    font-size: 4vw;
+    font-size: 3vw;
   }
 
   .contact-success {
-    font-size: 3.5vw;
+    font-size: 3vw;
   }
 }
