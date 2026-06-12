@@ -22,13 +22,13 @@ export const NavBar: React.FC = () => {
 
           <div className="navbar-icons">
             {/* Replace href and icon classes with your links / icon files */}
-            <a href="#" className="navbar-icon-link" aria-label="Link 1">
+            <a href="https://github.com/noahmarquie1" target="_blank" className="navbar-icon-link" aria-label="Link 1">
               <span className="navbar-icon navbar-icon-1" />
             </a>
-            <a href="#" className="navbar-icon-link" aria-label="Link 2">
+            <a href="https://linkedin.com/in/noahmarquie" target="_blank" className="navbar-icon-link" aria-label="Link 2">
               <span className="navbar-icon navbar-icon-2" />
             </a>
-            <a href="#" className="navbar-icon-link" aria-label="Link 3">
+            <a href="mailto:noah.marquie@gmail.com" target="_blank" className="navbar-icon-link" aria-label="Link 3">
               <span className="navbar-icon navbar-icon-3" />
             </a>
           </div>

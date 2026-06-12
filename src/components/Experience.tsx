@@ -39,7 +39,9 @@ const EXPERIENCES: ExperienceData[] = [
     image: accessiwayExperience,
     imageAlt: "AccessiWay",
     description: [
-      ""
+      "At AccessiWay, I contributed to both Frontend Development and Computer Vision Engineering in the company’s website and software products.",
+      "In Frontend Development, I built and maintained parts of the AccessiWay website using JavaScript and React, focusing primarily on accessible user interfaces and strict WCAG compliance.",
+      "In Computer Vision Engineering, I contributed to the development and testing of the AccessPDF software by creating custom computer-vision architectures using OpenCV and YOLO to automate accessible annotation and formatting within PDF components.",
     ],
   },
   {
@@ -69,7 +71,10 @@ const EXPERIENCES: ExperienceData[] = [
     image: mathExperience,
     imageAlt: "UBC Mathematics",
     description: [
-      "In the Wachs Research Group at UBC's Mathematics Department, ..."
+      "Under Professor Anthony Wachs, I am currently developing algorithms to find even point distributions on complex geometries using both geometrical and physical approaches.",
+      "My project Dendrite leverages high-performance Python with JAX and SciPy to simulate particles with physical forces relaxing into equilibrium states, producing accurate point-clouds for various fluid dynamics experiments.",
+     "Additionally, I am conducting high-performance fluid dynamics simulations using C++ and Basilisk, and developing custom gradient-descent algorithms for in-house CFD (Computational Fluid Dynamics) solvers.",
+     "Check out my Dendrite code at https://github.com/noahmarquie1/dendrite"
     ],
   },
 ];

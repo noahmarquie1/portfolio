@@ -192,96 +192,111 @@ export const About: React.FC<{
   activeIdx: number | null;
   setActiveIdx: (idx: number | null) => void;
 }> = ({ activeIdx, setActiveIdx }) => {
+  const [isPhotoExpanded, setIsPhotoExpanded] = useState(false);
+
   return (
-    <section id="about" className="about-container">
-      <div className="about-grid">
-        <div className="about-left-column">
-          <div className="about-rect about-rect-1 profile-wrapper">
-            <img src={profileImage} alt="Noah" className="hero-image" />
-            <div className="profile-text">
-              <h2>Hi, my name is Noah</h2>
-              <p>
-                Building machine learning systems grounded in mathematical
-                rigor.
-              </p>
-            </div>
-          </div>
-          <div className="about-rect about-rect-2">
-            <div className="timeline-buttons">
-              {[
-                {
-                  title: "Software Engineering",
-                  logo: accessiwayLogo,
-                  alt: "AccessiWay",
-                },
-                {
-                  title: "ML for Nuclear",
-                  logo: transmutexLogo,
-                  alt: "Transmutex",
-                },
-                { title: "ML for Genomics", logo: uroLogo, alt: "URO" },
-                {
-                  title: "Scientific Computing",
-                  logo: mathLogo,
-                  alt: "UBC Mathematics",
-                },
-              ].map((exp, idx) => (
-                <div
-                  key={idx}
-                  className={`timeline-box ${activeIdx === idx ? "selected" : ""}`}
-                  onClick={() => setActiveIdx(idx)}
-                >
-                  <h2>{exp.title}</h2>
-                  <img src={exp.logo} alt={exp.alt} />
-                </div>
-              ))}
-            </div>
-            <div className="timeline-bottom"></div>
-          </div>
-        </div>
-        <div className="about-right-column">
-          <div className="about-rect about-rect-3">
-            <h2>About Me</h2>
-            <div className="education-box">
-              <div className="education-logo">
-                <img src={ubcLogo} alt="UBC Logo" />
-              </div>
-              <div className="education-info">
-                <h3 className="education-title">
-                  The University of British Columbia
-                </h3>
-                <p className="education-major">
-                  Combined Major in Computer Science and Mathematics
+    <>
+      <section id="about" className="about-container">
+        <div className="about-grid">
+          <div className="about-left-column">
+            <div className="about-rect about-rect-1 profile-wrapper">
+              <img src={profileImage} alt="Noah" className="hero-image" />
+              <div className="profile-text">
+                <h2>Hi, my name is Noah</h2>
+                <p>
+                  Building machine learning systems grounded in mathematical
+                  rigor.
                 </p>
               </div>
             </div>
-            <div className="education-highlights">
-              <p>Relevant Coursework:</p>
-              <ul>
-                <li>MATH 215: Elementary Differential Equations</li>
-                <li>CPSC 221: Basic Algorithms and Data Structures</li>
-                <li>PHIL 321: Induction, Decision, and Game Theory</li>
-              </ul>
+            <div className="about-rect about-rect-2">
+              <div className="timeline-buttons">
+                {[
+                  {
+                    title: "Software Engineering",
+                    logo: accessiwayLogo,
+                    alt: "AccessiWay",
+                  },
+                  {
+                    title: "ML for Nuclear",
+                    logo: transmutexLogo,
+                    alt: "Transmutex",
+                  },
+                  { title: "ML for Genomics", logo: uroLogo, alt: "URO" },
+                  {
+                    title: "Scientific Computing",
+                    logo: mathLogo,
+                    alt: "UBC Mathematics",
+                  },
+                ].map((exp, idx) => (
+                  <div
+                    key={idx}
+                    className={`timeline-box ${activeIdx === idx ? "selected" : ""}`}
+                    onClick={() => setActiveIdx(idx)}
+                  >
+                    <h2>{exp.title}</h2>
+                    <img src={exp.logo} alt={exp.alt} />
+                  </div>
+                ))}
+              </div>
+              <div className="timeline-bottom"></div>
             </div>
-            <div className="spotlight">
-              <div className="git-contrib">
-                <GitContrib />
+          </div>
+          <div className="about-right-column">
+            <div className="about-rect about-rect-3">
+              <h2>About Me</h2>
+              <div className="education-box">
+                <div className="education-logo">
+                  <img src={ubcLogo} alt="UBC Logo" />
+                </div>
+                <div className="education-info">
+                  <h3 className="education-title">
+                    The University of British Columbia
+                  </h3>
+                  <p className="education-major">
+                    Combined Major in Computer Science and Mathematics
+                  </p>
+                </div>
               </div>
-              <div className="music">
-                <MusicCarousel />
+              <div className="education-highlights">
+                <p>Relevant Coursework:</p>
+                <ul>
+                  <li>MATH 215: Elementary Differential Equations</li>
+                  <li>CPSC 221: Basic Algorithms and Data Structures</li>
+                  <li>MATH 317: Calculus IV — Vector Calculus</li>
+                </ul>
               </div>
-              <div className="photo">
-                <p className="photo-title">Photo of the Month</p>
-                <div className="photo-frame">
-                  <div className="photo-placeholder">
-                    <img src={monthPhoto} alt="Photo of the Month" />
+              <div className="spotlight">
+                <div className="git-contrib">
+                  <GitContrib />
+                </div>
+                <div className="music">
+                  <MusicCarousel />
+                </div>
+                <div className="photo">
+                  <p className="photo-title">Photo of the Month</p>
+                  <div className="photo-frame">
+                    <div
+                      className="photo-placeholder"
+                      onClick={() => setIsPhotoExpanded(true)}
+                    >
+                      <img src={monthPhoto} alt="Photo of the Month" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {isPhotoExpanded && (
+        <div className="photo-modal-overlay" onClick={() => setIsPhotoExpanded(false)}>
+          <div className="photo-modal">
+            <img src={monthPhoto} alt="Photo of the Month - Expanded" />
+          </div>
+        </div>
+      )}
+    </>
   );
 };

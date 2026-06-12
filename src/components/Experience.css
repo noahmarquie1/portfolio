@@ -99,15 +99,37 @@
         margin: 60px 40px;
     }
 
+    .experience-pane {
+        flex-direction: column;
+    }
+
+    .experience-image-wrap {
+        width: 100%;
+        order: 2;
+        margin-top: 1.5vw;
+    }
+
+    .experience-content {
+        order: 1;
+    }
+
     .experience-pane-title {
         font-size: 4vw;
+        margin-top: 2vw;
     }
 
     .experience-subtitle {
-        font-size: 2.2vw;
+        font-size: 3vw;
+        margin-bottom: 2vw;
     }
 
     .experience-text-box p {
-        font-size: 1.8vw;
+        font-size: 3vw;
     }
+
+    .experience-img {
+        width: 50vw;
+        margin-bottom: 2vw;
+    }
+
 }
