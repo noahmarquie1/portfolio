@@ -254,16 +254,16 @@ export const About: React.FC<{
                     The University of British Columbia
                   </h3>
                   <p className="education-major">
-                    Combined Major in Computer Science and Mathematics
+                    B.Sc. Combined Honours in Computer Science and Mathematics
                   </p>
                 </div>
               </div>
-              <div className="education-highlights">
-                <p>Relevant Coursework:</p>
+              <div className="recent-highlights">
+                <p>Recent Highlights:</p>
                 <ul>
-                  <li>MATH 215: Elementary Differential Equations</li>
-                  <li>CPSC 221: Basic Algorithms and Data Structures</li>
-                  <li>MATH 317: Calculus IV — Vector Calculus</li>
+                  <li><a target="_blank" href="https://github.com/noahmarquie1/mosaic">MOSAIC</a> — Combinatorial Learning for Cell-Type Deconvolution</li>
+                  <li><a target="_blank" href="https://github.com/noahmarquie1/dendrite">Dendrite</a> — Physical Optimization for Numerical Multiphase Flow </li>
+                  <li><a target="_blank" href="https://github.com/noahmarquie1/sfr_optimizer">SFR Optimizer</a> — Bayesian Optimization and RL for Nuclear</li>
                 </ul>
               </div>
               <div className="spotlight">

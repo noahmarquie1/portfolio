@@ -12,8 +12,10 @@
   background-color: black;
   padding: 3vw;
   box-shadow: 5px 5px gray;
-  margin: 60px auto;
+  margin: auto;
   width: 55%;
+  margin-bottom: 10vw;
+  margin-top: 4vw;
 }
 
 .contact-form {
