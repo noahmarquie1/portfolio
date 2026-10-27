@@ -1,3 +1,61 @@
 body {
-    margin: 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #111;
+  background: #fff;
+}
+
+.minimal-layout {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.about-minimal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-minimal-photo {
+  width: 100%;
+  height: auto;
+}
+
+.skills-minimal {
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid #ddd;
+  padding-top: 24px;
+}
+
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.skill-item h3 {
+  margin: 0;
+}
+
+.skill-item p {
+  margin: 0;
 }

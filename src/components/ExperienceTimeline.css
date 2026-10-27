@@ -1,0 +1,122 @@
+.timeline-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #111;
+}
+
+.timeline-section h2 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+
+.timeline-intro,
+.timeline-option-note {
+  margin: 0 0 16px;
+  color: #444;
+}
+
+.timeline-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.timeline-option {
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid #111;
+  background: #fff;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.timeline-option.selected {
+  background: #111;
+  color: #fff;
+}
+
+/* One column, top to bottom, for every variant. */
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline-icon-wrap {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.timeline-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.timeline-subtitle {
+  margin: 0 0 4px;
+  font-weight: 600;
+  color: #444;
+}
+
+.timeline-meta {
+  margin: 0 0 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.timeline-content p {
+  margin: 0 0 12px;
+}
+
+.timeline-detail-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+/* Option 1: vertical line on the left, icons on the line. */
+.timeline-list.timeline-line {
+  border-left: 2px solid #111;
+  padding-left: 24px;
+}
+
+.timeline-list.timeline-line .timeline-icon-wrap {
+  margin-left: -54px;
+}
+
+/* Option 2: minimal, plain text, no line and no cards. */
+.timeline-list.timeline-minimal .timeline-item {
+  border-top: 1px solid #ddd;
+  padding-top: 24px;
+}
+
+/* Option 3: detailed, icon on top, image below the subtitle. */
+.timeline-list.timeline-detailed .timeline-item {
+  border-top: 1px solid #ddd;
+  padding-top: 24px;
+}
