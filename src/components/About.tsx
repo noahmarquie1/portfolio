@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./About.css";
-import profileImage from "../assets/profile.jpg";
+import profileImage from "../assets/profile.JPG";
 import ubcLogo from "../assets/ubc-logo.png";
 
 import americanFootball from "../assets/albums/american_football.jpg";
