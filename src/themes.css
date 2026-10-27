@@ -1,0 +1,152 @@
+.minimal-layout[class*="theme-"] {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Site themes — one switcher, many looks. All themes reuse the same
+   React components, content and company logos; only CSS variables change.
+   Logo styling per theme is controlled by --logo-* variables, so each
+   aesthetic treats the logos consistently. */
+
+.design-switcher {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--border, #ddd);
+  background: var(--bg, #fff);
+  color: var(--text, #111);
+}
+
+.design-switcher h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.design-switcher p {
+  margin: 0;
+  color: var(--muted, #444);
+  font-size: 14px;
+}
+
+.design-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.design-button {
+  padding: 8px 12px;
+  border: 1px solid var(--border, #111);
+  background: var(--bg, #fff);
+  color: var(--text, #111);
+  cursor: pointer;
+  font: inherit;
+}
+
+.design-button.selected {
+  background: var(--accent, #111);
+  color: var(--accent-text, #fff);
+  border-color: var(--accent, #111);
+}
+
+/* Logo treatment — shared, themed via variables */
+.timeline-icon-wrap {
+  background: var(--logo-bg, #fff) !important;
+  border: var(--logo-border, 1px solid #ddd) !important;
+  border-radius: var(--logo-radius, 50%) !important;
+  box-shadow: var(--logo-shadow, none) !important;
+}
+
+.timeline-icon {
+  filter: var(--logo-filter, none) !important;
+}
+
+.skill-icon {
+  filter: var(--logo-filter, none) !important;
+}
+
+/* 1. Minimal — alisawuffles-inspired, plain, black on white */
+.theme-minimal {
+  --bg: #fff; --text: #111; --muted: #444; --accent: #111; --accent-text: #fff;
+  --border: #ddd; --font: system-ui, -apple-system, sans-serif;
+  --logo-bg: #fff; --logo-border: 1px solid #ddd; --logo-radius: 50%;
+  --logo-filter: none; --logo-shadow: none;
+}
+
+/* 2. Editorial — serif, rules, grey logos */
+.theme-editorial {
+  --bg: #fff; --text: #1a1a1a; --muted: #555; --accent: #1a1a1a; --accent-text: #fff;
+  --border: #1a1a1a; --font: Georgia, "Times New Roman", serif;
+  --logo-bg: #fff; --logo-border: 1px solid #1a1a1a; --logo-radius: 0;
+  --logo-filter: grayscale(1) contrast(1.1); --logo-shadow: none;
+}
+.theme-editorial h2, .theme-editorial h3 {
+  letter-spacing: 0.01em;
+}
+
+/* 3. Dark — midnight, logos on dark circles, softened */
+.theme-dark {
+  --bg: #0a0a0a; --text: #f2f2f2; --muted: #aaa; --accent: #f2f2f2; --accent-text: #111;
+  --border: #333; --font: system-ui, -apple-system, sans-serif;
+  --logo-bg: #1a1a1a; --logo-border: 1px solid #333; --logo-radius: 50%;
+  --logo-filter: none; --logo-shadow: none;
+}
+.theme-dark .timeline-section, .theme-dark .skills-minimal {
+  color: var(--text);
+}
+.theme-dark .timeline-intro, .theme-dark .timeline-option-note,
+.theme-dark .timeline-subtitle, .theme-dark .timeline-meta {
+  color: var(--muted);
+}
+
+/* 4. Terminal — monospace, green on black, monochrome logos */
+.theme-terminal {
+  --bg: #000; --text: #33ff66; --muted: #1a8a3a; --accent: #33ff66; --accent-text: #000;
+  --border: #33ff66; --font: "Courier New", Courier, monospace;
+  --logo-bg: #000; --logo-border: 1px solid #33ff66; --logo-radius: 0;
+  --logo-filter: grayscale(1) sepia(1) hue-rotate(70deg) saturate(3); --logo-shadow: none;
+}
+.theme-terminal .timeline-section, .theme-terminal .skills-minimal {
+  color: var(--text);
+}
+.theme-terminal .timeline-intro, .theme-terminal .timeline-option-note,
+.theme-terminal .timeline-subtitle, .theme-terminal .timeline-meta {
+  color: var(--muted);
+}
+
+/* 5. Warm paper — cream, brown, soft logos */
+.theme-warm {
+  --bg: #fdf6ec; --text: #3d2b1f; --muted: #7a5c44; --accent: #8b5a2b; --accent-text: #fff;
+  --border: #e0c9a8; --font: Georgia, serif;
+  --logo-bg: #fff8ee; --logo-border: 1px solid #e0c9a8; --logo-radius: 12px;
+  --logo-filter: sepia(0.25); --logo-shadow: 0 2px 8px rgba(61, 43, 31, 0.12);
+}
+
+/* 6. Brutalist — thick borders, hard shadow, red accent */
+.theme-brutalist {
+  --bg: #fff; --text: #000; --muted: #333; --accent: #e82127; --accent-text: #fff;
+  --border: 3px solid #000; --font: system-ui, -apple-system, sans-serif;
+  --logo-bg: #fff; --logo-border: 3px solid #000; --logo-radius: 0;
+  --logo-filter: none; --logo-shadow: 4px 4px 0 #000;
+}
+.theme-brutalist .design-button, .theme-brutalist .timeline-option {
+  border: 3px solid #000 !important;
+  box-shadow: 3px 3px 0 #000;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Timeline / skills inherit the site theme, not hard-coded black-on-white */
+.minimal-layout[class*="theme-"] .timeline-section {
+  color: var(--text);
+}
+.minimal-layout[class*="theme-"] .timeline-option {
+  background: var(--bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+.minimal-layout[class*="theme-"] .timeline-option.selected {
+  background: var(--accent);
+  color: var(--accent-text);
+}

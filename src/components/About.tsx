@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./About.css";
-import profileImage from "../assets/profile.jpg";
+import profileImage from "../assets/profile.JPG";
 import ubcLogo from "../assets/ubc-logo.png";
-import accessiwayLogo from "../assets/accessiway.png";
-import transmutexLogo from "../assets/transmutex.png";
-import uroLogo from "../assets/ubc_uro.png";
-import mathLogo from "../assets/math.png";
 
 import americanFootball from "../assets/albums/american_football.jpg";
 import backseatLovers from "../assets/albums/backseat_lovers.jpg";
@@ -15,9 +11,7 @@ import redClay from "../assets/albums/red_clay.jpg";
 import rubberSoul from "../assets/albums/rubber_soul.png";
 import monthPhoto from "../assets/month_photo.jpg";
 
-// ── Git Contribution Chart ──────────────────────────────────────────────────
 const GITHUB_USERNAME = "noahmarquie1";
-
 const DAYS = 32;
 
 interface ContribDay {
@@ -50,8 +44,6 @@ const GitContrib: React.FC = () => {
   return (
     <>
       <p className="git-contrib-title">Git Contributions</p>
-
-      {/* Loading: show faded placeholder grid */}
       {status === "loading" && (
         <div className="git-contrib-grid git-contrib-loading">
           {Array.from({ length: DAYS }).map((_, i) => (
@@ -59,22 +51,14 @@ const GitContrib: React.FC = () => {
           ))}
         </div>
       )}
-
-      {/* Error */}
-      {status === "error" && (
-        <div className="git-contrib-status">Unavailable</div>
-      )}
-
-      {/* Live data */}
+      {status === "error" && <div className="git-contrib-status">Unavailable</div>}
       {status === "done" && (
         <div className="git-contrib-grid">
           {cells.map((day, i) => (
             <div
               key={i}
               className={`contrib-cell level-${day.level}`}
-              title={`${day.date}: ${day.count} contribution${
-                day.count !== 1 ? "s" : ""
-              }`}
+              title={`${day.date}: ${day.count} contribution${day.count !== 1 ? "s" : ""}`}
             />
           ))}
         </div>
@@ -83,10 +67,6 @@ const GitContrib: React.FC = () => {
   );
 };
 
-// ── Music Carousel ──────────────────────────────────────────────────
-// Import your album art and fill in the src fields:
-// import album1 from "../assets/albums/album1.jpg";
-
 interface Album {
   title: string;
   artist: string;
@@ -94,36 +74,12 @@ interface Album {
 }
 
 const ALBUMS: Album[] = [
-  {
-    title: "American Football",
-    artist: "American Football",
-    src: americanFootball,
-  },
-  {
-    title: "When We Were Friends",
-    artist: "The Backseat Lovers",
-    src: backseatLovers,
-  },
-  {
-    title: "Grace",
-    artist: "Jeff Buckley",
-    src: grace,
-  },
-  {
-    title: "Where the Light Is: Live in LA",
-    artist: "John Mayer",
-    src: johnMayer,
-  },
-  {
-    title: "Red Clay",
-    artist: "Freddie Hubbard",
-    src: redClay,
-  },
-  {
-    title: "Rubber Soul",
-    artist: "The Beatles",
-    src: rubberSoul,
-  },
+  { title: "American Football", artist: "American Football", src: americanFootball },
+  { title: "When We Were Friends", artist: "The Backseat Lovers", src: backseatLovers },
+  { title: "Grace", artist: "Jeff Buckley", src: grace },
+  { title: "Where the Light Is: Live in LA", artist: "John Mayer", src: johnMayer },
+  { title: "Red Clay", artist: "Freddie Hubbard", src: redClay },
+  { title: "Rubber Soul", artist: "The Beatles", src: rubberSoul },
 ];
 
 function albumStyle(offset: number): React.CSSProperties {
@@ -172,10 +128,7 @@ const MusicCarousel: React.FC = () => {
           return (
             <div key={i} className="music-album" style={albumStyle(offset)}>
               {album.src ? (
-                <img
-                  src={album.src}
-                  alt={`${album.title} by ${album.artist}`}
-                />
+                <img src={album.src} alt={`${album.title} by ${album.artist}`} />
               ) : (
                 <div className="music-album-placeholder" />
               )}
@@ -188,103 +141,67 @@ const MusicCarousel: React.FC = () => {
   );
 };
 
-export const About: React.FC<{
-  activeIdx: number | null;
-  setActiveIdx: (idx: number | null) => void;
-}> = ({ activeIdx, setActiveIdx }) => {
+export const About: React.FC = () => {
   const [isPhotoExpanded, setIsPhotoExpanded] = useState(false);
 
   return (
     <>
-      <section id="about" className="about-container">
-        <div className="about-grid">
-          <div className="about-left-column">
-            <div className="about-rect about-rect-1 profile-wrapper">
-              <img src={profileImage} alt="Noah" className="hero-image" />
-              <div className="profile-text">
-                <h2>Hi, my name is Noah</h2>
-                <p>
-                  Building machine learning systems grounded in mathematical
-                  rigor.
-                </p>
-              </div>
-            </div>
-            <div className="about-rect about-rect-2">
-              <div className="timeline-buttons">
-                {[
-                  {
-                    title: "Software Engineering",
-                    logo: accessiwayLogo,
-                    alt: "AccessiWay",
-                  },
-                  {
-                    title: "ML for Nuclear",
-                    logo: transmutexLogo,
-                    alt: "Transmutex",
-                  },
-                  { title: "ML for Genomics", logo: uroLogo, alt: "URO" },
-                  {
-                    title: "Scientific Computing",
-                    logo: mathLogo,
-                    alt: "UBC Mathematics",
-                  },
-                ].map((exp, idx) => (
-                  <div
-                    key={idx}
-                    className={`timeline-box ${activeIdx === idx ? "selected" : ""}`}
-                    onClick={() => setActiveIdx(idx)}
-                  >
-                    <h2>{exp.title}</h2>
-                    <img src={exp.logo} alt={exp.alt} />
-                  </div>
-                ))}
-              </div>
-              <div className="timeline-bottom"></div>
-            </div>
+      <section id="about" className="about-minimal">
+        <img src={profileImage} alt="Noah" className="about-minimal-photo" />
+        <h2>Hi, my name is Noah</h2>
+        <p>Building machine learning systems grounded in mathematical rigor.</p>
+
+        <h2>About Me</h2>
+        <div className="education-box">
+          <div className="education-logo">
+            <img src={ubcLogo} alt="UBC Logo" />
           </div>
-          <div className="about-right-column">
-            <div className="about-rect about-rect-3">
-              <h2>About Me</h2>
-              <div className="education-box">
-                <div className="education-logo">
-                  <img src={ubcLogo} alt="UBC Logo" />
-                </div>
-                <div className="education-info">
-                  <h3 className="education-title">
-                    The University of British Columbia
-                  </h3>
-                  <p className="education-major">
-                    B.Sc. Combined Honours in Computer Science and Mathematics
-                  </p>
-                </div>
-              </div>
-              <div className="recent-highlights">
-                <p>Recent Highlights:</p>
-                <ul>
-                  <li><a target="_blank" href="https://github.com/noahmarquie1/mosaic">MOSAIC</a> — Combinatorial Learning for Cell-Type Deconvolution</li>
-                  <li><a target="_blank" href="https://github.com/noahmarquie1/dendrite">Dendrite</a> — Physical Optimization for Numerical Multiphase Flow </li>
-                  <li><a target="_blank" href="https://github.com/noahmarquie1/sfr_optimizer">SFR Optimizer</a> — Bayesian Optimization and RL for Nuclear</li>
-                </ul>
-              </div>
-              <div className="spotlight">
-                <div className="git-contrib">
-                  <GitContrib />
-                </div>
-                <div className="music">
-                  <MusicCarousel />
-                </div>
-                <div className="photo">
-                  <p className="photo-title">Photo of the Month</p>
-                  <div className="photo-frame">
-                    <div
-                      className="photo-placeholder"
-                      onClick={() => setIsPhotoExpanded(true)}
-                    >
-                      <img src={monthPhoto} alt="Photo of the Month" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div className="education-info">
+            <h3 className="education-title">The University of British Columbia</h3>
+            <p className="education-major">
+              B.Sc. Combined Honours in Computer Science and Mathematics
+            </p>
+          </div>
+        </div>
+
+        <div className="recent-highlights">
+          <p>Recent Highlights:</p>
+          <ul>
+            <li>
+              <a target="_blank" href="https://github.com/noahmarquie1/mosaic">
+                MOSAIC
+              </a>{" "}
+              — Combinatorial Learning for Cell-Type Deconvolution
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/noahmarquie1/dendrite">
+                Dendrite
+              </a>{" "}
+              — Physical Optimization for Numerical Multiphase Flow
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/noahmarquie1/sfr_optimizer">
+                SFR Optimizer
+              </a>{" "}
+              — Bayesian Optimization and RL for Nuclear
+            </li>
+          </ul>
+        </div>
+
+        <div className="git-contrib">
+          <GitContrib />
+        </div>
+        <div className="music">
+          <MusicCarousel />
+        </div>
+        <div className="photo">
+          <p className="photo-title">Photo of the Month</p>
+          <div className="photo-frame">
+            <div
+              className="photo-placeholder"
+              onClick={() => setIsPhotoExpanded(true)}
+            >
+              <img src={monthPhoto} alt="Photo of the Month" />
             </div>
           </div>
         </div>
@@ -300,3 +217,5 @@ export const About: React.FC<{
     </>
   );
 };
+
+export default About;
