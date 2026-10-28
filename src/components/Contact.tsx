@@ -29,11 +29,7 @@ export const Contact: React.FC = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
@@ -44,39 +40,43 @@ export const Contact: React.FC = () => {
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         setError(data.error || "Failed to send message");
-        console.error("Form submission failed:", data);
       }
-    } catch (error) {
+    } catch {
       setError("Network error. Please try again.");
-      console.error("Form submission error:", error);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="contact-container" id="connect">
-      <div className="contact-title">Let's Connect!</div>
-      <div className="contact-form-wrapper">
+    <section className="section" id="connect">
+      <h2 className="section-title">Get in Touch</h2>
+      <div className="contact-box">
+        <p className="contact-lead">
+          Have a question, opportunity, or just want to say hello? Drop a note
+          below.
+        </p>
         <form className="contact-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="contact-input"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="contact-input"
-          />
+          <div className="contact-row">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="contact-input"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="contact-input"
+            />
+          </div>
           <textarea
             name="message"
             placeholder="Your Message"
@@ -86,22 +86,16 @@ export const Contact: React.FC = () => {
             className="contact-textarea"
             rows={5}
           />
-          <button
-            type="submit"
-            className="contact-submit"
-            disabled={loading}
-          >
+          <button type="submit" className="contact-submit" disabled={loading}>
             {loading ? "Sending..." : "Send Message"}
           </button>
           {submitted && (
-            <div className="contact-success">Message sent successfully!</div>
+            <p className="contact-success">Message sent successfully!</p>
           )}
-          {error && (
-            <div className="contact-error">{error}</div>
-          )}
+          {error && <p className="contact-error">{error}</p>}
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,22 +1,24 @@
-import { useState } from "react";
 import { About } from "./components/About";
 import { Footer } from "./components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 
 import "./App.css";
-import NavBar from "./components/NavBar";
 import Experience from "./components/Experience";
+import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
+import SectionNav from "./components/SectionNav";
+
 
 function App() {
-  const [activeIdx, setActiveIdx] = useState<number | null>(1);
-
   return (
     <div>
-      <NavBar />
-      <About activeIdx={activeIdx} setActiveIdx={setActiveIdx} />
-      <Experience activeIdx={activeIdx} />
+      <SectionNav />
+      <div className="page">
+        <About />
+        <Experience />
+        <Education />
+      </div>
       <Skills />
       <Contact />
       <Footer />

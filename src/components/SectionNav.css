@@ -1,0 +1,98 @@
+.section-nav {
+    position: fixed;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    padding: 8px 0;
+}
+
+.section-nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 2px 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.section-nav-bar {
+    display: block;
+    width: 14px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #111;
+    opacity: 0.22;
+    transform-origin: center right;
+    transition:
+        height 180ms ease,
+        width 180ms ease,
+        opacity 180ms ease;
+}
+
+.section-nav-label {
+    position: absolute;
+    right: calc(100% + 10px);
+    white-space: nowrap;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #111;
+    opacity: 0;
+    transform: translateX(4px);
+    pointer-events: none;
+    transition:
+        opacity 180ms ease,
+        transform 180ms ease;
+}
+
+.section-nav-item.active .section-nav-bar {
+    width: 20px;
+    height: 3px;
+    opacity: 1;
+}
+
+/* When hovering any bar, shrink the active one back unless it is the hovered bar */
+.section-nav:hover .section-nav-item.active:not(:hover) .section-nav-bar,
+.section-nav:focus-within .section-nav-item.active:not(:focus-visible) .section-nav-bar {
+    width: 14px;
+    height: 2px;
+    opacity: 0.22;
+}
+
+.section-nav-item:hover .section-nav-bar,
+.section-nav-item:focus-visible .section-nav-bar {
+    width: 22px;
+    height: 3px;
+    opacity: 0.75;
+}
+
+.section-nav-item.active:hover .section-nav-bar,
+.section-nav-item.active:focus-visible .section-nav-bar {
+    width: 24px;
+    opacity: 1;
+}
+
+.section-nav-item:hover .section-nav-label,
+.section-nav-item:focus-visible .section-nav-label {
+    opacity: 0.85;
+    transform: translateX(0);
+}
+
+.section-nav-item:focus-visible {
+    outline: none;
+}
+
+@media (max-width: 720px) {
+    .section-nav {
+        display: none;
+    }
+}

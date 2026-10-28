@@ -30,23 +30,31 @@ export const Skills: React.FC = () => {
   ];
 
   return (
-    <div className="skills-container" id="skills">
-      <div className="skills-title">Skills & Interests</div>
-      <div className="skills-cubes">
+    <section className="section" id="skills">
+      <h2 className="section-title">Skills & Interests</h2>
+      <ol className="timeline skills-timeline">
         {skills.map((skill, index) => (
-          <div key={index} className="cube">
-            <div className="cube-content">
-              <div className="cube-top">
-                <div className="cube-title">{skill.title}</div>
-                <img src={skill.icon} alt={skill.title} className="cube-icon" />
-              </div>
-              <div className="cube-description">{skill.description}</div>
+          <li key={skill.title} className="timeline-item">
+            <div className="timeline-header">
+              {index < 3 ? (
+                <span
+                  className="timeline-logo skill-logo"
+                  style={{
+                    maskImage: `url(${skill.icon})`,
+                    WebkitMaskImage: `url(${skill.icon})`,
+                  }}
+                />
+              ) : (
+                <img src={skill.icon} alt="" className="timeline-logo" />
+              )}
+              <h3 className="timeline-title">{skill.title}</h3>
             </div>
-          </div>
+            <p className="timeline-text">{skill.description}</p>
+          </li>
         ))}
-      </div>
-    </div>
+      </ol>
+    </section>
   );
 };
-
 export default Skills;
+

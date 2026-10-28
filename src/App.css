@@ -1,0 +1,9 @@
+body {
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    background-color: #f7f7f7;
+    color: #111;
+}
+
+.page {
+    padding-bottom: 32px;
+}
