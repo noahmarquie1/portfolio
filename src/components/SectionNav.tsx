@@ -11,14 +11,16 @@ const SECTIONS = [
 
 const HEADER_GAP = 16;
 
+type SectionId = (typeof SECTIONS)[number]["id"];
+
 export const SectionNav: React.FC = () => {
-  const [activeId, setActiveId] = useState(SECTIONS[0].id);
+  const [activeId, setActiveId] = useState<SectionId>(SECTIONS[0].id);
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const update = () => {
       const marker = window.innerHeight * 0.28;
-      let current = SECTIONS[0].id;
+      let current: SectionId = SECTIONS[0].id;
 
       for (const { id } of SECTIONS) {
         const el = document.getElementById(id);
@@ -52,7 +54,7 @@ export const SectionNav: React.FC = () => {
     };
   }, []);
 
-  const scrollTo = (id: string) => {
+  const scrollTo = (id: SectionId) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
       block: "start",
