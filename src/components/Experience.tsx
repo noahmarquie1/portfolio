@@ -39,7 +39,7 @@ const EXPERIENCES: ExperienceData[] = [
     logo: teslaLogo,
     description: [
       "At Tesla, I am currently developing deep learning-based probabilistic forecasting methodologies for US energy market trading, including scenario pipelines and a multi-model evaluation suite",
-      "Additionally, I have shipped production-level backtesting and forecasting workflows in Python, using cloud-based tooling to evaluate forecast performance for Tesla's Megapack bidding.",
+      "Additionally, I have shipped production-level backtesting and forecasting workflows in Python, deploying on Kubernetes and utilizing cloud-based tooling to evaluate forecast performance for Tesla's Megapack bidding.",
     ],
   },
   {
