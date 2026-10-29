@@ -8,7 +8,7 @@ export const About: React.FC = () => (
     <div>
       <h1 className="hero-name">Noah Marquié</h1>
       <p className="hero-tagline">
-        Building machine learning systems grounded in mathematical rigor
+        Building machine learning systems grounded in mathematical rigor.
       </p>
       <div className="hero-socials">
         <a href="https://github.com/noahmarquie1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">

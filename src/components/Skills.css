@@ -1,5 +1,57 @@
 .skill-logo {
-  background-color: #111;
-  mask: center / contain no-repeat;
-  -webkit-mask: center / contain no-repeat;
+    background-color: #111;
+    mask: center / contain no-repeat;
+    -webkit-mask: center / contain no-repeat;
+}
+
+@media (min-width: 1100px) {
+    #skills {
+        width: min(1040px, calc(100vw - 96px));
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #skills .skills-timeline {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 48px;
+        max-width: none;
+        margin: 0;
+    }
+
+    #skills .skills-timeline .timeline-item {
+        flex: 1 1 0;
+        min-width: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 28px;
+        text-align: center;
+    }
+
+    #skills .skills-timeline .timeline-item::before {
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    #skills .skills-timeline .timeline-item:not(:last-child)::after {
+        left: 50%;
+        top: 5px;
+        width: calc(100% + 48px);
+        height: 2px;
+    }
+
+    #skills .skills-timeline .timeline-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    #skills .skills-timeline .timeline-text {
+        margin-bottom: 0;
+        text-align: center;
+    }
 }

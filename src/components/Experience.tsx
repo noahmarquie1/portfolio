@@ -74,7 +74,7 @@ const EXPERIENCES: ExperienceData[] = [
   },
   {
     title: "AccessiWay",
-    subtitle: "Software Engineering Intern  •  Jan 2024 — Mar 2024",
+    subtitle: "Software Engineer Intern  •  Jan 2024 — Mar 2024",
     logo: accessiwayLogo,
     description: [
       "At AccessiWay, I contributed to both Frontend Development and Computer Vision Engineering in the company’s website and software products.",
