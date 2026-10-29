@@ -14,13 +14,13 @@ function App() {
   return (
     <div>
       <SectionNav />
-      <div className="page">
-        <About />
+      <About />
+      <div className="content">
         <Experience />
         <Education />
+        <Skills />
+        <Contact />
       </div>
-      <Skills />
-      <Contact />
       <Footer />
       <Analytics />
     </div>
